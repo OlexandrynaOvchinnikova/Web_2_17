@@ -1,1 +1,67 @@
-<p>skills works!</p>
+<div class="col-xl-3 coll-md-6 col-12">
+  <div class="flex items-center mb-[30px]">
+    <button (click)="toggleContent()"
+            class="text-lg w-full font-extrabold p-[7px] bg-gray-200 rounded-[10px] text-black">
+      <i class="fa-solid fa-graduation-cap text-orange-500"></i> MY SKILLS
+    </button>
+  </div>
+
+  <!-- Використовуємо *ngIf для показу або приховування списку -->
+  <div *ngIf="isExpanded" class="expanded relative">
+    <ul id="skills-list" class="skills relative pl-6">
+      <!-- Вертикальна лінія -->
+      <div class="absolute top-0 left-[18px] w-[2px] bg-orange-500 h-[260px]"></div>
+
+      <li class="relative flex items-center space-x-4">
+        <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[27px] z-10"></div>
+        <div class="flex flex-col pb-4 pl-[20px]">
+          <b><span id="mw">Microsoft Word</span></b>
+          <label>
+            <input class="my_input" type="range" value="700" min="0" max="1000">
+          </label>
+        </div>
+      </li>
+
+      <li class="relative flex items-center space-x-4">
+        <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[20px] z-10"></div>
+        <div class="flex flex-col pb-4 pl-[20px]">
+          <b><span id="wd">Web Designing</span></b>
+          <label>
+            <input class="my_input" type="range" value="500" min="0" max="1000">
+          </label>
+        </div>
+      </li>
+
+      <li class="relative flex items-center space-x-4">
+        <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[20px] z-10"></div>
+        <div class="flex flex-col pb-4 pl-[20px]">
+          <b><span id="gd">Graphic Designing</span></b>
+          <label>
+            <input class="my_input" type="range" value="600" min="0" max="1000">
+          </label>
+        </div>
+      </li>
+
+      <li class="relative flex items-center space-x-4">
+        <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[20px] z-10"></div>
+        <div class="flex flex-col pb-4 pl-[20px]">
+          <b><span id="ad">Affinity Designer</span></b>
+          <label>
+            <input class="my_input" type="range" value="400" min="0" max="1000">
+          </label>
+        </div>
+      </li>
+
+      <li class="relative flex items-center space-x-4">
+        <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[25px] z-10"></div>
+        <div class="flex flex-col pb-4 pl-[20px]">
+          <b><span id="mp">MS Powerpoint</span></b>
+          <label>
+            <input class="my_input"  type="range" name="" value="800" min="0" max="1000"
+                   onChange="" onmousemove="">
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

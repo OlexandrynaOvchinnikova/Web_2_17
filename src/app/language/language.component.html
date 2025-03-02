@@ -1,1 +1,25 @@
-<p>language works!</p>
+<div class="col-xl-3 col-md-6 col-12">
+  <div class="flex items-center mb-[30px]">
+    <button (click)="toggleContent()" class="text-lg w-full font-extrabold p-[7px] bg-gray-200 rounded-[10px] text-black">
+      <i class="fa-solid fa-graduation-cap text-orange-500"></i> LANGUAGE
+    </button>
+  </div>
+  <div *ngIf="isExpanded" class="expanded relative">
+    <div class="grid grid-cols-2 gap-4"> <!-- Два елементи в ряд -->
+      <div *ngFor="let language of languages; let i = index" class="flex flex-col items-center">
+        <div class="pie animate"
+             [style.--p]="language.percentage"
+             [style.--c]="language.color">
+          <span>{{ language.percentage }}%</span>
+        </div>
+        <div class="lang text-center">
+          <span>{{ language.name.split(' ')[0] }}</span>
+          <br />
+          <span>{{ language.name.split(' ')[1] }}</span>
+          <br />
+          <span>{{ language.name.split(' ')[2] }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

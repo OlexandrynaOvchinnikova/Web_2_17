@@ -1,1 +1,51 @@
-<p>education works!</p>
+<div class="container mx-auto">
+  <div class="flex items-center mb-[30px]">
+    <button (click)="toggleContent()" class="text-lg w-full font-extrabold p-[7px] bg-gray-200 rounded-[10px] text-black">
+      <i class="fa-solid fa-graduation-cap text-orange-500"></i> MY EDUCATION
+    </button>
+  </div>
+
+  <div *ngIf="isExpanded" class="expanded relative">
+    <ul class="space-y-6 relative pl-6">
+
+
+      <li class="relative flex items-center space-x-4">
+        <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[72px] z-10"></div>
+        <div class="flex flex-col pb-4 pl-[20px]">
+          <h3 class="text-lg font-extrabold">MASTER OF CREATIVE ARTS</h3>
+          <p class="text-sm text-black tracking-[5px] font-light">University Name <span class="font-extrabold tracking-normal"> 2016-Present</span></p>
+          <p class="text-sm py-[15px]">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.
+          </p>
+        </div>
+      </li>
+
+      <li class="relative flex items-center space-x-4">
+        <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[65px] z-10"></div>
+        <div class="flex flex-col pb-4 pl-[20px]">
+          <h3 class="text-lg font-extrabold">MASTER OF DESIGN</h3>
+          <p class="text-sm text-black tracking-[5px] font-light">University Name<span class="font-extrabold tracking-normal"> 2015-2017</span></p>
+          <p class="text-sm py-[15px]">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.
+          </p>
+        </div>
+      </li>
+
+
+      <li class="relative flex items-center space-x-4">
+        <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[65px] z-10"></div>
+        <div class="flex flex-col pb-4 pl-[20px]">
+          <h3 class="text-lg font-extrabold">MARKETING OFFICER</h3>
+          <p class="text-sm text-black tracking-[5px] font-light">University Name<span class="font-extrabold tracking-normal"> 2010-2012</span></p>
+          <p class="text-sm py-[15px]">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.
+          </p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="absolute top-0 left-[18px] w-[2px] bg-gray-200 h-[370px]"></div>
+  </div>
+</div>

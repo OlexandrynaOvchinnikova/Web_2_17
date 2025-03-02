@@ -1,11 +1,24 @@
-
-<main class="main bg-red-200">
-  <div class="content">
-    <div class="left-side">
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+<main class="main">
+  <div class="flex justify-center container max-w-[1600px] mx-auto px-4">
+    <div class="w-full">
+      <div>
+        <app-header></app-header>
+        <app-about></app-about>
+        <div class="py-[20px]">
+          <app-contact></app-contact>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 py-4">
+        <app-work-experience></app-work-experience>
+        <app-education></app-education>
+        <app-references></app-references>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 py-4">
+        <app-awards></app-awards>
+        <app-skills></app-skills>
+        <app-language></app-language>
+      </div>
+      <app-footer></app-footer>
     </div>
   </div>
 </main>
-
-<router-outlet />

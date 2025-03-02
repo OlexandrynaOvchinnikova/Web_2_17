@@ -1,21 +1,36 @@
-// src/app/app.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { provideRouter, Routes } from '@angular/router';
 
 
-// const routes: Routes = [
-//   { path: '', component: HomeComponent },
-//   // Додаткові маршрути
-// ];
+import { HeaderComponent } from './header/header.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { WorkExperienceComponent } from './work-experience/work-experience.component';
+import { EducationComponent } from './education/education.component';
+import { ReferencesComponent } from './references/references.component';
+import { AwardsComponent } from './awards/awards.component';
+import { SkillsComponent } from './skills/skills.component';
+import { LanguageComponent } from './language/language.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [RouterOutlet]
+  standalone: true,
+  imports: [
+    HeaderComponent,
+    AboutComponent,
+    ContactComponent,
+    WorkExperienceComponent,
+    EducationComponent,
+    ReferencesComponent,
+    AwardsComponent,
+    SkillsComponent,
+    LanguageComponent,
+    FooterComponent
+  ]
 })
 export class AppComponent {
   title = 'cv-app';
 }
+

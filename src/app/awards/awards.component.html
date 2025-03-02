@@ -1,8 +1,7 @@
 <div class="container mx-auto">
   <div class="flex items-center gap-[30px] mb-[30px]">
-    <!-- Кнопка з квадратиком -->
     <button (click)="toggleContent()" class="relative flex items-center">
-      <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[13px] -translate-y-[10px] z-10"></div>
+      <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[14px] -translate-y-[10px] z-10"></div>
     </button>
 
     <div class="flex items-center pb-4 pl-[20px]">
@@ -10,39 +9,25 @@
         <i class="fa-solid fa-trophy text-orange-500"></i> AWARDS
       </h3>
     </div>
-
     <span class="flex-grow ml-[10px] border-b-[3px] border-orange-500"></span>
-
   </div>
 
   <div *ngIf="isExpanded" class="expanded relative">
     <ul class="space-y-6 relative pl-6">
 
-      <li class="relative flex items-center space-x-4">
+      <li *ngFor="let award of awards" class="relative flex items-center space-x-4">
         <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[72px] z-10"></div>
         <div class="flex flex-col pb-4 pl-[20px]">
-          <h3 class="text-lg font-extrabold">MASTER OF CREATIVE ARTS</h3>
-          <p class="text-sm text-black tracking-[5px] font-light">Company Name <span class="font-extrabold tracking-normal"> 1667-Present</span></p>
-          <p class="text-sm py-[15px]">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.
+          <h3 class="text-lg font-extrabold">{{ award.title }}</h3>
+          <p class="text-sm text-black tracking-[5px] font-light">
+            {{ award.company }} <span class="font-extrabold tracking-normal">{{ award.years }}</span>
           </p>
-        </div>
-      </li>
-
-      <li class="relative flex items-center space-x-4">
-        <div class="w-[10px] h-[10px] bg-orange-500 absolute left-[-10px] -translate-y-[72px] z-10"></div>
-        <div class="flex flex-col pb-4 pl-[20px]">
-          <h3 class="text-lg font-extrabold">MASTER OF CREATIVE ARTS</h3>
-          <p class="text-sm text-black tracking-[5px] font-light">Company Name <span class="font-extrabold tracking-normal"> 2019-2027</span></p>
-          <p class="text-sm py-[15px]">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis culpa debitis.
-          </p>
+          <p class="text-sm py-[15px]">{{ award.description }}</p>
         </div>
       </li>
     </ul>
 
-    <div class="absolute top-0 left-[18px] w-[2px] bg-gray-200 h-[180px]"></div>
+    <div class="absolute top-0 translate-y-[-70px] left-[18px] w-[2px] bg-gray-200 h-[250px]"></div>
   </div>
 </div>
+

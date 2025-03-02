@@ -1,13 +1,24 @@
-<footer class="position-fixed bottom-0 end-0 p-3">
-  <section class="date">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <script>
-            document.write("© " + new Date().getFullYear() + " O.O");
-          </script>
-        </div>
-      </div>
+<footer class="w-full bg-gray-200 text-black p-3 rounded-[5px]">
+  <div class="container mx-auto flex flex-col items-center justify-between md:flex-row">
+
+    <div class="text-lg font-normal mb-4 md:mb-0">
+      © {{ currentYear }} O.O
     </div>
-  </section>
+
+
+    <div class="flex space-x-4 px-[30px]">
+      <a href="#" class="text-orange-500 hover:text-black transition-colors">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a href="#" class="text-orange-500 hover:text-black transition-colors">
+        <i class="fa-brands fa-twitter"></i>
+      </a>
+      <a href="#" class="text-orange-500 hover:text-black transition-colors">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="#" class="text-orange-500 hover:text-black transition-colors">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
 </footer>

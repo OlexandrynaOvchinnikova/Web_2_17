@@ -11,6 +11,7 @@ import { AwardsComponent } from './awards/awards.component';
 import { SkillsComponent } from './skills/skills.component';
 import { LanguageComponent } from './language/language.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
   styleUrls: ['./app.component.css'],
   standalone: true,
   imports: [
+    HttpClientModule,
     HeaderComponent,
     AboutComponent,
     ContactComponent,

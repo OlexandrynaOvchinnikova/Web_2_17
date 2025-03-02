@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { HeaderComponent } from './header/header.component';
@@ -11,7 +15,7 @@ import { AwardsComponent } from './awards/awards.component';
 import { SkillsComponent } from './skills/skills.component';
 import { LanguageComponent } from './language/language.component';
 import { FooterComponent } from './footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./app.component.css'],
   standalone: true,
   imports: [
-    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     HeaderComponent,
     AboutComponent,
     ContactComponent,
@@ -29,10 +34,10 @@ import { HttpClientModule } from '@angular/common/http';
     AwardsComponent,
     SkillsComponent,
     LanguageComponent,
-    FooterComponent
+    FooterComponent,
+    RegistrationFormComponent,
   ]
 })
 export class AppComponent {
   title = 'cv-app';
 }
-

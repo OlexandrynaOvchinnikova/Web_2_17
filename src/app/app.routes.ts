@@ -5,7 +5,12 @@ import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './guards/auth.guard';
 
 export const routes: Routes = [
-  {path: 'main', component: CvComponent, canActivate: [AuthGuard] },
+  {
+    path: 'main',
+    loadComponent: () =>
+      import('./cv/cv.component').then((m) => m.CvComponent),
+    canActivate: [AuthGuard]
+  },
   {path: 'registration', component: RegistrationFormComponent},
   {path: 'login', component: LoginComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },

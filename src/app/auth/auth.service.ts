@@ -1,42 +1,48 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/login'; // URL сервера для логіну
+  private apiUrl = 'http://localhost:3000/login';  // URL для реального сервера
+  private users = [
+    { name: "Princess_Peach8", email: "alexandrinaovchinnikova@gmail.com", password: "1234567890" },
+    { name: "Princess_Peach8", email: "alexandrinaovchinnikova@gmail.com", password: "123456789034" },
+    { name: "Princess_Peach90", email: "alexandrinaovchinnikova@gmail.com", password: "12345678" },
+    // Додай всі інші користувацькі дані з файлу
+  ];
 
   constructor(private http: HttpClient) {}
 
-  // Метод для логіну
-  login(email: string, password: string): Observable<any> {
-    const credentials = { email, password };
-    return this.http.post<any>(this.apiUrl, credentials);
-  }
-
-  // Перевірка автентифікації
+  // Метод для перевірки, чи є токен
   isAuthenticated(): boolean {
     if (typeof window !== 'undefined') {
-      const token = localStorage.getItem('authToken');
+      // Перевірка наявності токена в sessionStorage або localStorage
+      const token = sessionStorage.getItem('authToken'); // або localStorage
       return !!token;
     }
     return false;
   }
 
-  // Зберігаємо токен
-  saveToken(token: string): void {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('authToken', token);
+  login(email: string, password: string): Observable<any> {
+    // Перевірка введених даних з масиву користувачів
+    const user = this.users.find(u => u.email === email && u.password === password);
+
+    if (user) {
+      // Імітація успішного входу та повернення токену
+      return of({ token: 'fake-jwt-token' });
+    } else {
+      // Якщо користувача немає, повертаємо помилку
+      return of(null).pipe(catchError(() => { throw new Error('Invalid credentials'); }));
     }
   }
 
-  // Логаут
-  logout(): void {
+  saveToken(token: string): void {
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('authToken');
+      sessionStorage.setItem('authToken', token); // або localStorage
     }
   }
 }
-

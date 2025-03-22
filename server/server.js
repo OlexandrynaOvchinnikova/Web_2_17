@@ -17,12 +17,12 @@ app.post('/login', (req, res) => {
 
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
-      console.error('Помилка читання файлу:', err.message); // Вивід у консоль
+      console.error('Помилка читання файлу:', err.message);
       return res.status(500).json({ message: 'Помилка на сервері (не вдалося прочитати файл)' });
     }
 
     try {
-      const users = JSON.parse(data); // Перетворення JSON у масив об'єктів
+      const users = JSON.parse(data);
       const user = users.find(user => user.email === email && user.password === password);
 
       if (user) {
@@ -31,11 +31,13 @@ app.post('/login', (req, res) => {
         return res.status(401).json({ message: 'Невірні дані для входу' });
       }
     } catch (parseError) {
-      console.error('Помилка парсингу JSON:', parseError.message); // Вивід у консоль
+      console.error('Помилка парсингу JSON:', parseError.message);
       return res.status(500).json({ message: 'Помилка на сервері (невалідний JSON)' });
     }
   });
 });
+
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

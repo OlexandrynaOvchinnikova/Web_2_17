@@ -13,10 +13,13 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+
+    // Якщо користувач авторизований, дозволяємо доступ
     if (this.authService.isAuthenticated()) {
-      return true; // Якщо користувач авторизований, пускаємо на сторінку
+      return true;
     } else {
-      this.router.navigate(['/login']); // Якщо ні, перенаправляємо на сторінку логіну
+      // Якщо не авторизований, переадресовуємо на сторінку входу
+      this.router.navigate(['login']);
       return false;
     }
   }
